@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = env("DATABASE_URL")
+  url      = "file:./dev.db"
 }
 
 model User {
@@ -13,7 +13,6 @@ model User {
   name      String
   lastName  String
   active    Boolean  @default(false)
-  country   String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

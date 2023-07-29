@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "esModuleInterop": true,
+    "target": "esnext",
+    "moduleResolution": "node",
     "strict": true,
     "jsx": "react-jsx",
     "jsxFragmentFactory": "Fragment",
