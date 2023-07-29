@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "dev": "bun run --hot src/index.ts"
+  },
+  "dependencies": {
+    "hono": "^3.3.4"
+  },
+  "devDependencies": {
+    "bun-types": "^0.6.2",
+    "prisma": "^5.0.0"
+  }
+}

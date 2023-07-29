@@ -1,0 +1,39 @@
+lockfileVersion: '6.0'
+
+dependencies:
+  hono:
+    specifier: ^3.3.4
+    version: 3.3.4
+
+devDependencies:
+  bun-types:
+    specifier: ^0.6.2
+    version: 0.6.2
+  prisma:
+    specifier: ^5.0.0
+    version: 5.0.0
+
+packages:
+
+  /@prisma/engines@5.0.0:
+    resolution: {integrity: sha512-kyT/8fd0OpWmhAU5YnY7eP31brW1q1YrTGoblWrhQJDiN/1K+Z8S1kylcmtjqx5wsUGcP1HBWutayA/jtyt+sg==}
+    requiresBuild: true
+    dev: true
+
+  /bun-types@0.6.2:
+    resolution: {integrity: sha512-yJ59Nl9je54fvS/Bh32dpnuWzAEGZn46GEsUfCnc+gbR/1MveoNbzBtN37SpMihFE0MiatlpNyKFKb9W7hvdBg==}
+    dev: true
+
+  /hono@3.3.4:
+    resolution: {integrity: sha512-lqvcsQrXS0bSydj/MkOXi3opAwrlauIjZefhXMMRj9prABfBWdrYHSrWk/xfxgxNPs4yuEMh2Z5zV0L2b1Jmdw==}
+    engines: {node: '>=16.0.0'}
+    dev: false
+
+  /prisma@5.0.0:
+    resolution: {integrity: sha512-KYWk83Fhi1FH59jSpavAYTt2eoMVW9YKgu8ci0kuUnt6Dup5Qy47pcB4/TLmiPAbhGrxxSz7gsSnJcCmkyPANA==}
+    engines: {node: '>=16.13'}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      '@prisma/engines': 5.0.0
+    dev: true
