@@ -1,6 +1,7 @@
 import { PrismaClient, User } from "@prisma/client";
+import { IUsersRepository } from "../types";
 
-class PrismaUsersRepository {
+export class PrismaUsersRepository implements IUsersRepository {
   private prisma: PrismaClient;
 
   constructor() {
@@ -23,5 +24,3 @@ class PrismaUsersRepository {
     return await this.prisma.user.delete({ where: { id } });
   }
 }
-
-export default new PrismaUsersRepository();
