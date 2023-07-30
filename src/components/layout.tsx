@@ -12,7 +12,7 @@ export const Layout = (props: { children: any }) => html`
     </head>
     <body>
       <div class="p-4">
-        <h1 class="text-4xl font-bold mb-4"><a href="/">Users</a></h1>
+        <h1 class="text-4xl font-bold mb-4"><a href="/">Users List</a></h1>
         ${props.children}
       </div>
     </body>

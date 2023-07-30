@@ -1,4 +1,4 @@
-import { IUsersRepository } from "../types";
+import { CreateUserDTO, IUsersRepository } from "../types";
 
 export class CreateUser {
   private readonly usersRepository: IUsersRepository;
@@ -7,11 +7,7 @@ export class CreateUser {
     this.usersRepository = usersRepository;
   }
 
-  public async execute(data: {
-    email: string;
-    name: string;
-    lastName: string;
-  }) {
+  public async execute(data: CreateUserDTO) {
     return await this.usersRepository.createUser(data);
   }
 }

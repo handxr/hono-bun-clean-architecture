@@ -1,5 +1,5 @@
 import { PrismaClient, User } from "@prisma/client";
-import { IUsersRepository } from "../types";
+import { CreateUserDTO, IUsersRepository } from "../types";
 
 export class PrismaUsersRepository implements IUsersRepository {
   private prisma: PrismaClient;
@@ -12,11 +12,7 @@ export class PrismaUsersRepository implements IUsersRepository {
     return await this.prisma.user.findMany();
   }
 
-  async createUser(data: {
-    email: string;
-    name: string;
-    lastName: string;
-  }): Promise<User> {
+  async createUser(data: CreateUserDTO): Promise<User> {
     return await this.prisma.user.create({ data });
   }
 

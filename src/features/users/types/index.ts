@@ -9,3 +9,9 @@ export type IUsersRepository = {
   }) => Promise<User>;
   deleteUser: (id: number) => Promise<User>;
 };
+
+export type CreateUserDTO = {
+  name: string;
+  lastName: string;
+  email: string;
+};
