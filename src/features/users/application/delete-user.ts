@@ -1,4 +1,4 @@
-import { IUsersRepository } from "../../domain/repositories";
+import { IUsersRepository } from "../domain/users.repository";
 
 export class DeleteUser {
   private readonly usersRepository: IUsersRepository;

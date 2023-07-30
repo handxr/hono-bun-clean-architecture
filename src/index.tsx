@@ -1,22 +1,24 @@
 import { Hono } from "hono";
 
-import { UsersController } from "./features/users/infrastructure/controllers/users.controller";
-import { UsersViewController } from "./features/users/infrastructure/controllers/users-view.controller";
+import { PORT } from "./config/constants";
+import {
+  usersController,
+  usersViewController,
+} from "@/features/users/infrastructure/dependencies";
 
 const app = new Hono();
 const api = new Hono();
 
-const usersController = new UsersController();
-const usersViewController = new UsersViewController();
-
 // APP ROUTES
-
-app.get("/", usersViewController.getIndexPage);
+app.get("/", usersViewController.getIndexPage.bind(usersViewController));
 
 // API ROUTES
+api.get("/users", usersController.getAllUsers.bind(usersController));
 
-api.get("/users", usersController.getAllUsers);
-
+// APP MIDDLEWARES
 app.route("/api", api);
 
-export default app;
+export default {
+  port: PORT,
+  fetch: app.fetch,
+};

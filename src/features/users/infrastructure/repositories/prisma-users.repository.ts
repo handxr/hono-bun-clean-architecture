@@ -1,10 +1,10 @@
 import { PrismaClient, User } from "@prisma/client";
 
-import { IUsersRepository } from "../../domain/repositories";
-import { CreateUserDTO } from "../../domain/dtos/create-user.dto";
+import { IUsersRepository } from "../../domain/users.repository";
+import { CreateUserDTO } from "../../domain/create-user.dto";
 
 export class PrismaUsersRepository implements IUsersRepository {
-  private prisma: PrismaClient;
+  private readonly prisma: PrismaClient;
 
   constructor() {
     this.prisma = new PrismaClient();
