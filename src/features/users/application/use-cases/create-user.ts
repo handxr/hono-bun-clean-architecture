@@ -1,4 +1,5 @@
-import { CreateUserDTO, IUsersRepository } from "../../infrastructure/types";
+import { CreateUserDTO } from "../../domain/dtos/create-user.dto";
+import { IUsersRepository } from "../../domain/repositories";
 
 export class CreateUser {
   private readonly usersRepository: IUsersRepository;

@@ -1,4 +1,4 @@
-import { IUsersRepository } from "../../infrastructure/types";
+import { IUsersRepository } from "../../domain/repositories";
 
 export class GetUsers {
   private readonly usersRepository: IUsersRepository;
