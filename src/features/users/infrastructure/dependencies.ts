@@ -16,5 +16,6 @@ export const usersController = new UsersController(
 );
 export const usersViewController = new UsersViewController(
   getUsers,
-  createUser
+  createUser,
+  deleteUser
 );

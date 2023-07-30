@@ -24,12 +24,4 @@ export class UsersController {
 
     return c.json(createdUser);
   }
-
-  public async deleteUserApi(c: Context) {
-    const userId = c.req.param("id");
-
-    await this.deleteUser.execute(+userId);
-
-    return c.body(null);
-  }
 }

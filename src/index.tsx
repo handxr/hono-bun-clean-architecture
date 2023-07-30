@@ -13,12 +13,15 @@ const api = new Hono();
 app.get("/", usersViewController.getIndexPage.bind(usersViewController));
 app.post(
   "/users",
-  usersViewController.postCreateUser.bind(usersViewController)
+  usersViewController.createUserView.bind(usersViewController)
+);
+app.delete(
+  "/users/:id",
+  usersViewController.deleteUserView.bind(usersController)
 );
 
 // API ROUTES
 api.get("/users", usersController.getAllUsers.bind(usersController));
-api.delete("/users/:id", usersController.deleteUserApi.bind(usersController));
 
 // APP MIDDLEWARES
 app.route("/api", api);
