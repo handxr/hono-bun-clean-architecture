@@ -11,6 +11,10 @@ const api = new Hono();
 
 // APP ROUTES
 app.get("/", usersViewController.getIndexPage.bind(usersViewController));
+app.post(
+  "/users",
+  usersViewController.postCreateUser.bind(usersViewController)
+);
 
 // API ROUTES
 api.get("/users", usersController.getAllUsers.bind(usersController));
