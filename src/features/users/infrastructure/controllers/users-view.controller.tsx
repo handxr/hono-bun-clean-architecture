@@ -22,8 +22,8 @@ export class UsersViewController {
   }
 
   public async postCreateUser(c: Context) {
-    const user = await c.req.parseBody();
-    await this.createUser.execute(user as any);
+    const formData = await c.req.parseBody();
+    await this.createUser.execute(formData as any);
     return c.redirect("/");
   }
 }

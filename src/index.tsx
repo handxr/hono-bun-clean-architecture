@@ -18,6 +18,7 @@ app.post(
 
 // API ROUTES
 api.get("/users", usersController.getAllUsers.bind(usersController));
+api.delete("/users/:id", usersController.deleteUserApi.bind(usersController));
 
 // APP MIDDLEWARES
 app.route("/api", api);

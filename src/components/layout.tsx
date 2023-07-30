@@ -9,6 +9,12 @@ export const Layout = (props: { children: any }) => html`
       <script src="https://unpkg.com/hyperscript.org@0.9.9"></script>
       <script src="https://cdn.tailwindcss.com"></script>
       <title>Hono + Bun + htmx</title>
+      <style>
+        tr.htmx-swapping td {
+          opacity: 0;
+          transition: opacity 1s ease-out;
+        }
+      </style>
     </head>
     <body>
       <div class="p-4">
