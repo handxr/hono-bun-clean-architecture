@@ -5,6 +5,7 @@ import { GetUsers } from "../../application/get-users";
 import { CreateUserForm } from "../views/components/create-user-form";
 import { CreateUser } from "../../application/create-user";
 import { DeleteUser } from "../../application/delete-user";
+import { TableRow } from "../views/components/table-row";
 
 export class UsersViewController {
   constructor(
@@ -25,8 +26,8 @@ export class UsersViewController {
 
   public async createUserView(c: Context) {
     const formData = await c.req.parseBody();
-    await this.createUser.execute(formData as any);
-    return c.redirect("/");
+    const user = await this.createUser.execute(formData as any);
+    return c.html(<TableRow user={user} />);
   }
 
   public async deleteUserView(c: Context) {

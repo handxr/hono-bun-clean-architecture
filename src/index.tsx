@@ -17,7 +17,7 @@ app.post(
 );
 app.delete(
   "/users/:id",
-  usersViewController.deleteUserView.bind(usersController)
+  usersViewController.deleteUserView.bind(usersViewController)
 );
 
 // API ROUTES

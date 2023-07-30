@@ -1,10 +1,10 @@
 export const CreateUserForm = () => (
   <form
     hx-post="/users"
+    hx-target="#users-table tbody"
     class="max-w-md mx-auto mt-4"
     _="on htmx:afterRequest reset() me"
-    hx-boost="true"
-    hx-push-url="true"
+    hx-swap="beforebegin"
   >
     <div class="mb-4">
       <label for="name" class="block text-gray-700 font-bold mb-2">

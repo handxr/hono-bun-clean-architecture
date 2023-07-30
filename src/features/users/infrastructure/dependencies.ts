@@ -9,11 +9,7 @@ export const prismaUsersRepository = new PrismaUsersRepository();
 export const getUsers = new GetUsers(prismaUsersRepository);
 export const createUser = new CreateUser(prismaUsersRepository);
 export const deleteUser = new DeleteUser(prismaUsersRepository);
-export const usersController = new UsersController(
-  getUsers,
-  createUser,
-  deleteUser
-);
+export const usersController = new UsersController(getUsers, createUser);
 export const usersViewController = new UsersViewController(
   getUsers,
   createUser,

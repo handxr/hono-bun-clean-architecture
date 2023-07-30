@@ -7,8 +7,7 @@ import { DeleteUser } from "../../application/delete-user";
 export class UsersController {
   constructor(
     private readonly getUsers: GetUsers,
-    private readonly createUser: CreateUser,
-    private readonly deleteUser: DeleteUser
+    private readonly createUser: CreateUser
   ) {}
 
   public async getAllUsers(c: Context) {

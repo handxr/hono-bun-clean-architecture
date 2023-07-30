@@ -1,4 +1,5 @@
 import { User } from "@prisma/client";
+import { TableRow } from "./table-row";
 
 type UsersListProps = {
   users: User[];
@@ -11,7 +12,10 @@ export const UsersList = ({ users }: UsersListProps) => {
 
   return (
     <div class="overflow-x-auto">
-      <table class="table-auto border-collapse border border-gray-400">
+      <table
+        class="table-auto border-collapse border border-gray-400"
+        id="users-table"
+      >
         <thead>
           <tr class="bg-gray-200">
             <th class="px-4 py-2">ID</th>
@@ -28,23 +32,7 @@ export const UsersList = ({ users }: UsersListProps) => {
           hx-swap="outerHTML swap:1s"
         >
           {users.map((user) => (
-            <tr key={user.id} class="border-b border-gray-400">
-              <td class="px-4 py-2">{user.id}</td>
-              <td class="px-4 py-2">{user.name}</td>
-              <td class="px-4 py-2">{user.lastName}</td>
-              <td class="px-4 py-2">{user.email}</td>
-              <td class="px-4 py-2">
-                <input type="checkbox" checked={user.active} />
-              </td>
-              <td class="px-4 py-2">
-                <button
-                  hx-delete={`/api/users/${user.id}`}
-                  class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                >
-                  Delete
-                </button>
-              </td>
-            </tr>
+            <TableRow user={user} />
           ))}
         </tbody>
       </table>
