@@ -1,4 +1,4 @@
-import { IUsersRepository } from "../types";
+import { IUsersRepository } from "../../infrastructure/types";
 
 export class DeleteUser {
   private readonly usersRepository: IUsersRepository;
