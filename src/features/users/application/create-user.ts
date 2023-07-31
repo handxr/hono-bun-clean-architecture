@@ -1,7 +1,7 @@
 import { CreateUserDTO } from "../domain/create-user.dto";
 import { IUsersRepository } from "../domain/users.repository";
 
-export class CreateUser {
+export class CreateUserUseCase {
   private readonly usersRepository: IUsersRepository;
 
   constructor(usersRepository: IUsersRepository) {

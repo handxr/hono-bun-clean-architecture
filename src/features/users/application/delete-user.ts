@@ -1,6 +1,6 @@
 import { IUsersRepository } from "../domain/users.repository";
 
-export class DeleteUser {
+export class DeleteUserUseCase {
   private readonly usersRepository: IUsersRepository;
 
   constructor(usersRepository: IUsersRepository) {

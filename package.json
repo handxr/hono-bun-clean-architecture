@@ -11,6 +11,5 @@
   "devDependencies": {
     "bun-types": "^0.6.2",
     "prisma": "^5.0.0"
-   
   }
 }

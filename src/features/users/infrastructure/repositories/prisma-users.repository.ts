@@ -21,4 +21,8 @@ export class PrismaUsersRepository implements IUsersRepository {
   async deleteUser(id: number): Promise<User> {
     return await this.prisma.user.delete({ where: { id } });
   }
+
+  async updateUser(id: number, data: CreateUserDTO): Promise<User> {
+    return await this.prisma.user.update({ where: { id }, data });
+  }
 }

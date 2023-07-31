@@ -1,11 +1,11 @@
 import { User } from "@prisma/client";
-import { TableRow } from "./table-row";
-
+import { TableRowView } from "./table-row-view";
+ 
 type UsersListProps = {
   users: User[];
 };
 
-export const UsersList = ({ users }: UsersListProps) => {
+export const UsersListView = ({ users }: UsersListProps) => {
   if (!users.length) {
     return <p>No users found</p>;
   }
@@ -18,6 +18,7 @@ export const UsersList = ({ users }: UsersListProps) => {
       >
         <thead>
           <tr class="bg-gray-200">
+     
             <th class="px-4 py-2">ID</th>
             <th class="px-4 py-2">Name</th>
             <th class="px-4 py-2">Last Name</th>
@@ -32,10 +33,13 @@ export const UsersList = ({ users }: UsersListProps) => {
           hx-swap="outerHTML swap:1s"
         >
           {users.map((user) => (
-            <TableRow user={user} />
+            <TableRowView user={user} 
+          
+            />
           ))}
         </tbody>
       </table>
+      
     </div>
   );
 };

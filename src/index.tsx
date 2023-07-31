@@ -3,28 +3,27 @@ import { Hono } from "hono";
 import { PORT } from "./config/constants";
 import {
   usersController,
-  usersViewController,
 } from "@/features/users/infrastructure/dependencies";
 
 const app = new Hono();
-const api = new Hono();
-
-// APP ROUTES
-app.get("/", usersViewController.getIndexPage.bind(usersViewController));
+ 
+ 
+app.get("/", usersController.getIndexPage.bind(usersController));
 app.post(
   "/users",
-  usersViewController.createUserView.bind(usersViewController)
+  usersController.createUserView.bind(usersController)
 );
+app.put(
+  "/users/:id",
+  usersController.updateUserView.bind(usersController)
+)
 app.delete(
   "/users/:id",
-  usersViewController.deleteUserView.bind(usersViewController)
+  usersController.deleteUserView.bind(usersController)
 );
 
-// API ROUTES
-api.get("/users", usersController.getAllUsers.bind(usersController));
-
-// APP MIDDLEWARES
-app.route("/api", api);
+ 
+ 
 
 export default {
   port: PORT,

@@ -1,17 +1,19 @@
-import { CreateUser } from "../application/create-user";
-import { DeleteUser } from "../application/delete-user";
-import { GetUsers } from "../application/get-users";
-import { UsersViewController } from "./controllers/users-view.controller";
+ 
+import { CreateUserUseCase, DeleteUserUseCase, GetUsersUseCase } from "../application";
+import { UpdateUserUseCase } from "../application/update-user";
 import { UsersController } from "./controllers/users.controller";
+ 
+ 
 import { PrismaUsersRepository } from "./repositories/prisma-users.repository";
 
 export const prismaUsersRepository = new PrismaUsersRepository();
-export const getUsers = new GetUsers(prismaUsersRepository);
-export const createUser = new CreateUser(prismaUsersRepository);
-export const deleteUser = new DeleteUser(prismaUsersRepository);
-export const usersController = new UsersController(getUsers, createUser);
-export const usersViewController = new UsersViewController(
-  getUsers,
-  createUser,
-  deleteUser
+export const getUsersUseCase = new GetUsersUseCase(prismaUsersRepository);
+export const createUserUseCase = new CreateUserUseCase(prismaUsersRepository);
+export const deleteUserUseCase = new DeleteUserUseCase(prismaUsersRepository);
+export const updateUserUseCase = new UpdateUserUseCase(prismaUsersRepository);
+export const usersController = new UsersController(
+  getUsersUseCase,
+  createUserUseCase,
+  deleteUserUseCase,
+  updateUserUseCase
 );

@@ -1,4 +1,4 @@
-export const CreateUserForm = () => (
+export const CreateUserView = () => (
   <form
     hx-post="/users"
     hx-target="#users-table tbody"
